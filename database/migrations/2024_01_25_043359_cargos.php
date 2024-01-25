@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        //
+        Schema::create('Cargo', function (Blueprint $table) {
+            $table->engine = "InnoDB"; // Establece el motor de almacenamiento de la tabla en InnoDB.
+            $table->bigIncrements('id'); // Crea una columna de clave primaria autoincremental de tipo BIGINT.
+            $table->string('Vacante'); // Crea una columna de tipo VARCHAR para el nombre del libro.
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        //
     }
 };
